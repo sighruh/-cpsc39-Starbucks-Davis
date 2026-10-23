@@ -80,6 +80,18 @@ public final class SortCheck {
             failed++;
             System.out.println("FAIL: " + label + " -- " + problem.getMessage());
         }
+        List<Integer> input = new ArrayList<>(List.of(3, 5, 5, 5));
+
+        MergeSort.sort(input, Integer::compare);
+
+        List<Integer> expected = List.of(3, 5, 5, 5);
+
+        if (input.equals(expected)) {
+            System.out.println("PASS: All identical values");
+        } else {
+            System.out.println("FAIL: All identical values");
+        }
+        
     }
 
     private static void require(boolean condition, String message) {
